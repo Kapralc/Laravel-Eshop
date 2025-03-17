@@ -1,0 +1,5 @@
+    @font-face {
+        font-family: Gambetta;
+        src: url("/public/fonts/Gambetta/Gambetta-Variable.ttf") format("ttf");
+        color: aqua;
+    }
