@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('customers', function (Blueprint $table) {
-            $table->id();
-            $table->name();
-            $table->email();
-            $table->phoneNumber();
-            $table->discount();
-
+            $table->id();  // Primární klíč 'id'
+            $table->string('name');  // Sloupec pro jméno
+            $table->string('email')->unique();  // Sloupec pro email (s unikátním omezením)
+            $table->string('phone_number')->nullable();  // Sloupec pro telefonní číslo (volitelné)
+            $table->decimal('discount', 5, 2)->nullable();  // Sloupec pro slevu, s maximální velikostí 5 a 2 desetinnými místy
+            $table->timestamps();  // Sloupce 'created_at' a 'updated_at'
         });
     }
 
@@ -29,3 +29,4 @@ return new class extends Migration
         Schema::dropIfExists('customers');
     }
 };
+

@@ -3,40 +3,36 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Review; // Nezapomeň importovat model Review
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    public function index()
+{
+    // Načtěte produkty z databáze
+    $products = Product::all();
+    
+    // Načtěte recenze seřazené podle data (nejnovější první)
+    $reviews = Review::orderBy('created_at', 'desc')->get(); // Seřadí podle 'created_at' (nejnovější první)
 
-  public function index()
-    {
-        // Načtěte produkty z databáze
-        $products = Product::all();
+    // Předání produktů a recenzí do view
+    return view('home', compact('products', 'reviews'));
+}
 
-        // Předání produktů do view
-        return view('home', compact('products'));
-    }
-    /**
-     * Show the form for creating a new resource.
-     */
+    // Ostatní metody zůstávají stejné
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
-      public function show($id)
+    public function show($id)
     {
         // Načte produkt podle ID
         $product = Product::findOrFail($id);
@@ -44,31 +40,24 @@ class HomeController extends Controller
         // Předá produkt do view
         return view('products.show', compact('product'));
     }
+
     public function search(Request $request)
-        {
-            $query = $request->input('query');
-            $products = Product::where('name', 'LIKE', "%{$query}%")->get();
-            return view('products.index', compact('products'));
-        }
-    /**
-     * Show the form for editing the specified resource.
-     */
+    {
+        $query = $request->input('query');
+        $products = Product::where('name', 'LIKE', "%{$query}%")->get();
+        return view('products.index', compact('products'));
+    }
+
     public function edit(Product $product)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Product $product)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Product $product)
     {
         //

@@ -6,23 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-  
     public function up(): void
     {
         Schema::create('photos', function (Blueprint $table) {
-        $table->increments('id'); //you save this id in other tables
-        $table->string('title');
-        $table->string('src');
-        $table->string('mime_type')->nullable();
-        $table->string('title')->nullable();
-        $table->string('alt')->nullable();
-        $table->text('description')->nullable();
-        $table->timestamps();
+            $table->increments('id'); // Tento id použiješ v jiných tabulkách
+            $table->string('title'); // Ponech tuto verzi, pokud chceš, aby title bylo povinné
+            $table->string('src');
+            $table->string('mime_type')->nullable();
+            $table->string('alt')->nullable();
+            $table->text('description')->nullable();
+            $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        //
+        Schema::dropIfExists('photos');
     }
 };
