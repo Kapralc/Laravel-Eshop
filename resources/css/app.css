@@ -3,3 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: Gambetta;
+    src: url("/public/fonts/gambetta/Gambetta-Variable.ttf");
+    color: aqua;
+}

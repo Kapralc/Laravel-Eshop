@@ -18,7 +18,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                "Gambetta" : ["gambetta"]
+                'gambetta' : ['gambetta']
             },
         }
     },
