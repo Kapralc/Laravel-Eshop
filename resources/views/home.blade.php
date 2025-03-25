@@ -12,7 +12,7 @@
 
     <!-- Why Choose Us Section -->
     <div class="py-10 text-center bg-gray-100">
-        <h2 class="text-3xl font-gambetta">Proč nakupovat u nás?</h2>
+        <h2 class="text-3xl font-Rubik">Proč nakupovat u nás?</h2>
         <p class="mt-4 text-lg text-gray-700">Nabízíme nejlepší produkty za nejlepší ceny!</p>
         <div class="mt-6 flex flex-wrap justify-center gap-6">
             <div class="bg-white shadow-md rounded-lg p-6 max-w-xs">

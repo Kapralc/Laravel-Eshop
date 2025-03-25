@@ -18,7 +18,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                'gambetta' : ['gambetta']
+                'Rubik' : ['rubik']
             },
         }
     },

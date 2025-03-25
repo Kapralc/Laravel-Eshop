@@ -4,7 +4,27 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: Gambetta;
-    src: url("/public/fonts/gambetta/Gambetta-Variable.ttf");
-    color: aqua;
+    font-family: 'Rubik';
+    src: url('/fonts/Rubik-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+html.lenis, html.lenis body {
+    height: auto;
+   }
+   .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+   }
+   .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+   }
+   .lenis.lenis-stopped {
+    overflow: hidden;
+   }
+   .lenis.lenis-smooth iframe {
+    pointer-events: none;
+   }
